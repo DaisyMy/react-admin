@@ -14,13 +14,21 @@
     "moduleDetection": "force",
     "noEmit": true,
     "jsx": "react-jsx",
+    // 解析非相对模块名的基准目录
+    "baseUrl": "./",
+    // 模块名到基于 baseUrl的路径映射的列表。
+    "paths": {
+      "@": ["src"],
+      "@/*": ["src/*"]
+    },
+    "types": ["vite/client"],
 
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "incremental": true 
+    "incremental": true
   },
   "include": ["src"]
 }
