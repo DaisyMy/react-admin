@@ -1,3 +1,3 @@
-import Layout from "../layout/index";
+import Layout from "@/layout/index";
 
 export const LayoutIndex = () => <Layout />;
