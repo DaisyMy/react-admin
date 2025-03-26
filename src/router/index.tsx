@@ -4,15 +4,12 @@ import Login from '@/views/login';
 
 export const routerArray: RouteObject[] = [];
 // * 导入所有router
-const metaRouters = import.meta.glob("./modules/*.tsx");
+const metaRouters:any = import.meta.glob('./modules/*.tsx', { eager: true });
 // * 处理路由
-Object.keys(metaRouters).forEach(item => {
-	console.log(item,'========', metaRouters[item]);
-	
-	Object.keys(metaRouters[item]).forEach((key: any) => {
-		console.log(key,'=======');
-		// routerArray.push(...metaRouters[item][key]);
-	});
+Object.keys(metaRouters).forEach((key) => {
+  console.log(metaRouters[key], Object.prototype.toString.call(metaRouters[key]));
+  const route =metaRouters[key]
+  routerArray.push(...route.default);
 });
 
 export const rootRouter: RouteObject[] = [
