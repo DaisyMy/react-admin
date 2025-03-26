@@ -7,7 +7,6 @@ export const routerArray: RouteObject[] = [];
 const metaRouters:any = import.meta.glob('./modules/*.tsx', { eager: true });
 // * 处理路由
 Object.keys(metaRouters).forEach((key) => {
-  console.log(metaRouters[key], Object.prototype.toString.call(metaRouters[key]));
   const route =metaRouters[key]
   routerArray.push(...route.default);
 });
@@ -15,7 +14,7 @@ Object.keys(metaRouters).forEach((key) => {
 export const rootRouter: RouteObject[] = [
   {
     path: '/',
-    element: <Navigate to="/login" />,
+    element: <Navigate to="/home" />,
   },
   {
     path: '/login',
