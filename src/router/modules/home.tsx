@@ -7,6 +7,7 @@ const homeRouter: Array<RouteObject> = [
     element: <LayoutIndex />,
     meta: {
       title: '首页',
+      isMenu: true,
     },
     children: [
       {
@@ -16,6 +17,7 @@ const homeRouter: Array<RouteObject> = [
           requiresAuth: false,
           title: '首页',
           key: 'Home',
+          isMenu: true,
         },
       },
     ],
