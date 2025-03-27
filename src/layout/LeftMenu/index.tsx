@@ -21,7 +21,11 @@ const getMenuRoute = (arr: Array<RouteObject>): any => {
       let children: Array<MenuItem> = [];
       item.children && (children = getMenuRoute(item.children));
       const { key, title } = item.meta;
-      result.push(getItem(title, key, null, children));
+      if (item.children?.length) {
+        result.push(getItem(title, key, null, children));
+      } else {
+        result.push(getItem(title, key, null));
+      }
     }
   });
   return result;
